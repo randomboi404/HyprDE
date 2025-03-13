@@ -83,3 +83,15 @@ fastfetch                                              # system information fetc
 # --------------------------------------------------- // HyDE
 # hyde-cli-git                                           # cli tool to manage hyde \\ Deprecated for HyDE
 hypridle                                               # idle daemon
+
+# --------------------------------------------------- // Misc
+baobab
+bat
+btop
+gamemode
+gnome-clocks
+man-db
+rclone
+stow
+wtype
+zip

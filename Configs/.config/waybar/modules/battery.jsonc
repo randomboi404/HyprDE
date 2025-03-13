@@ -6,6 +6,7 @@
         },
         "format": "{icon} {capacity}%",
         "rotate": ${r_deg},
+        "interval": 1,
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
