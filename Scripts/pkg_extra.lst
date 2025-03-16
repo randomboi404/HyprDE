@@ -52,6 +52,11 @@ pokemon-colorscripts-git                           # display pokemon sprites (op
 # --------------------------------------------------- // OSD
 swayosd-git                                             #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
 
+# --------------------------------------------------- // OBS Studio
+obs-studio-stable
+python-pipx
+
+# --------------------------------------------------- // Other important tools
 ani-cli-git
 auto-cpufreq
 gpu-screen-recorder

@@ -77,3 +77,6 @@ if ! pkg_installed flatpak; then
 else
     print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
 fi
+
+mkdir -p ~/Pictures/Wallpapers
+cp "${scrDir}/Wallpapers/"* ~/Pictures/Wallpapers/
