@@ -33,7 +33,7 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
         case ${grubopt} in
         1) grubtheme="Retroboot" ;;
         2) grubtheme="Pochita" ;;
-	3) grubtheme="CyberRe" ;;
+        3) grubtheme="CyberRe" ;;
         *) grubtheme="None" ;;
         esac
 
@@ -50,6 +50,10 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
             /^#GRUB_THEME=/c\GRUB_THEME=\"/usr/share/grub/themes/${grubtheme}/theme.txt\"
             /^#GRUB_SAVEDEFAULT=true/c\GRUB_SAVEDEFAULT=true" /etc/default/grub
         fi
+
+        # Change GRUB timeout to 3 seconds (instead of the default 5)
+        print_log -g "[bootloader] " -b "configure :: " "setting GRUB timeout to 3 seconds..."
+        sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=3/' /etc/default/grub
 
         sudo grub-mkconfig -o /boot/grub/grub.cfg
     else

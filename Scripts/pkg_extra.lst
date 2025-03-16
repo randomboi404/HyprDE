@@ -55,6 +55,7 @@ swayosd-git                                             #A GTK based on screen d
 # --------------------------------------------------- // OBS Studio
 obs-studio-stable
 python-pipx
+gnu-netcat
 
 # --------------------------------------------------- // Other important tools
 ani-cli-git
