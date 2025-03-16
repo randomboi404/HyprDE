@@ -22,7 +22,7 @@ xdg-desktop-portal-gtk                                 # xdg desktop portal usin
 steam                                                  # gaming platform
 gamemode                                               # daemon and library for game optimizations
 mangohud                                               # system performance overlay
-# gamescope                                            # micro-compositor for gaming
+gamescope                                            # micro-compositor for gaming
 lutris                                               # Lutris is an open source gaming platform for Linux
 
 # --------------------------------------------------- // Music
