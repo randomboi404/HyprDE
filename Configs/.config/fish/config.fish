@@ -33,11 +33,6 @@ alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
 alias wget 'wget -c '
 
-# Config files
-alias hyprconfig 'cd ~/.config/hypr && echo ~/.config/hyprland.conf'
-alias fishconfig 'cd ~/.config/fish && echo ~/.config/fish/config.fish'
-alias kittyconfig 'cd ~/.config/kitty && echo ~/.config/kitty/kitty.conf'
-
 alias google-chrome-stable="google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland"
 alias obsidian="obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
@@ -48,3 +43,5 @@ alias backup="cd ~/dotfiles && git add . && git commit -m \"Backup: $(date "+%Y-
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias spotx-flatpak="fish <(curl -sSL https://raw.githubusercontent.com/Nuzair46/BlockTheSpot-Linux/main/install.sh) -P /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/ -h";
+
+zoxide init fish --cmd cd | source
