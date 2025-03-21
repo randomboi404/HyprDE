@@ -74,13 +74,12 @@ fn_mpris() {
         if [ -f "$HOME/.face.icon" ]; then
             if ! cmp -s "$HOME/.face.icon" "${THUMB}.png"; then
                 cp -f "$HOME/.face.icon" "${THUMB}.png"
-                pkill -USR2 hyprlock /dev/null 2>&1 # updates the mpris thumbnail
-
+                pkill -USR2 hyprlock >/dev/null 2>&1 # updates the mpris thumbnail
             fi
         else
             if ! cmp -s "$XDG_DATA_HOME/icons/Wallbash-Icon/hyde.png" "${THUMB}.png"; then
                 cp "$XDG_DATA_HOME/icons/Wallbash-Icon/hyde.png" "${THUMB}.png"
-                pkill -USR2 hyprlock /dev/null 2>&1 # updates the mpris thumbnail
+                pkill -USR2 hyprlock >/dev/null 2>&1 # updates the mpris thumbnail
             fi
         fi
         exit 1
@@ -117,7 +116,7 @@ mpris_thumb() { # Generate thumbnail for mpris
     echo "${artUrl}" >"${THUMB}".lnk
     curl -Lso "${THUMB}".art "$artUrl"
     magick "${THUMB}.art" -quality 50 "${THUMB}.png"
-    pkill -USR2 hyprlock /dev/null 2>&1 # updates the mpris thumbnail
+    pkill -USR2 hyprlock >/dev/null 2>&1 # updates the mpris thumbnail
 }
 
 fn_cava() {
