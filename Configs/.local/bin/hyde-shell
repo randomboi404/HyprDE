@@ -179,14 +179,16 @@ if [[ ! "${BASH_SOURCE[0]}" != "${0}" ]]; then
     *)
         if [ -f "${LIB_DIR}/hyde/${1}.sh" ]; then
             bash "${LIB_DIR}/hyde/${1}.sh" "${@:2}"
-        elif [ -f "${LIB_DIR}/hyde/${1}" ]; then
-            bash "${LIB_DIR}/hyde/${1}" "${@:2}"
         elif [ -f "${LIB_DIR}/hyde/${1}.py" ]; then
             python "${LIB_DIR}/hyde/${1}.py" "${@:2}"
         elif [ -f "${LIB_DIR}/hyde/${1}" ]; then
-            python "${LIB_DIR}/hyde/${1}" "${@:2}"
+            "${LIB_DIR}/hyde/${1}" "${@:2}"
         elif [ -f "${1}" ] && [ -x "${1}" ]; then
             "$1" "${@:2}"
+        else
+            echo "Command not found: $1"
+            echo "Available commands:"
+            list_script
         fi
         ;;
     esac

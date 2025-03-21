@@ -54,16 +54,16 @@ get_hashmap() {
         hashMap=$(
             # shellcheck disable=SC2046
             find "${wallSource}" -type f \
-            \( $(printf -- "-iname *.%s -o " "${supported_files[@]}" | sed 's/ -o $//') \) ! -path "*/logo/*" \
-            -exec "${hashMech}" {} + 2> /dev/null |
-            sort -k2
+                \( $(printf -- "-iname *.%s -o " "${supported_files[@]}" | sed 's/ -o $//') \) ! -path "*/logo/*" \
+                -exec "${hashMech}" {} + 2>/dev/null |
+                sort -k2
         )
         # hashMap=$(
         # find "${wallSource}" -type f \( -iname "*.gif" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.mkv"  \) ! -path "*/logo/*" -exec "${hashMech}" {} + | sort -k2
         # )
 
         if [ -z "${hashMap}" ]; then
-          notify-send -a "HyDE Alert" "WARNING: No compatible wallpapers found in \"${wallSource}\""
+            notify-send -a "HyDE Alert" "WARNING: No compatible wallpapers found in \"${wallSource}\""
             continue
         fi
 
@@ -167,7 +167,7 @@ fi
 
 pkg_installed() {
     local pkgIn=$1
-    if pacman -Qi "${pkgIn}" &>/dev/null; then
+    if hyde-shell pm.sh pq "${pkgIn}" &>/dev/null; then
         return 0
     elif pacman -Qi "flatpak" &>/dev/null && flatpak info "${pkgIn}" &>/dev/null; then
         return 0
