@@ -82,7 +82,7 @@ cd ~/HyprDE/Scripts
 
 > [!IMPORTANT]
 > Refer your list from `Scripts/pkg_extra.lst`
-> or you can `cp  Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to install all extra packages.
+> or you can `cp Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to install all extra packages.
 
 <!--
 

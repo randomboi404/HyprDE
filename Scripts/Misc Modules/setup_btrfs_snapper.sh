@@ -3,19 +3,22 @@
 # Check if the root filesystem is BTRFS
 fstype=$(findmnt -n -o FSTYPE /)
 if [ "$fstype" != "btrfs" ]; then
-    echo "Error: Filesystem is not BTRFS, hence snapper cannot be configured. Exiting..."
-    exit 1
+    echo "Error: Filesystem is not BTRFS, hence snapper cannot be configured."
+    echo "This is not an error - the system will continue without BTRFS snapshots."
+    exit 0
 fi
 
 # Check for "root" and "home" subvolumes
 if ! btrfs subvolume list / 2>/dev/null | grep -q "path root\$"; then
-    echo "Error: 'root' subvolume not found. Exiting..."
-    exit 1
+    echo "Error: 'root' subvolume not found."
+    echo "This is not an error - the system will continue without BTRFS snapshots."
+    exit 0
 fi
 
 if ! btrfs subvolume list / 2>/dev/null | grep -q "path home\$"; then
-    echo "Error: 'home' subvolume not found. Exiting..."
-    exit 1
+    echo "Error: 'home' subvolume not found."
+    echo "This is not an error - the system will continue without BTRFS snapshots."
+    exit 0
 fi
 
 # Detect available AUR helper: prefer paru over yay
@@ -24,8 +27,9 @@ if command -v paru &>/dev/null; then
 elif command -v yay &>/dev/null; then
     AUR_HELPER="yay"
 else
-    echo -e "No AUR Helper found.\nCannot setup BTRFS Snapper."
-    exit 1
+    echo "No AUR Helper found."
+    echo "This is not an error - the system will continue without BTRFS snapshots."
+    exit 0
 fi
 
 echo "Using $AUR_HELPER to install required packages..."
