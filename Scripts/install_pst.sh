@@ -89,6 +89,11 @@ sudo pacman -S --noconfirm gnome-keyring seahorse
 systemctl --user enable gnome-keyring-daemon.service
 systemctl --user start gnome-keyring-daemon.service
 
+# sets up obs-cli for obs studio
+if command -v obs &> /dev/null && command -v pipx &> /dev/null; then
+    pipx install obs-cli
+fi
+
 # flatpak
 if ! pkg_installed flatpak; then
     print_log -r "[FLATPAK]" -b "list :: " "flatpak application"
