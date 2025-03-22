@@ -52,6 +52,8 @@ cd ~/HyprDE/Scripts
 ./install.sh
 ```
 
+OR, to install the stable release version, head over to `https://github.com/randomboi404/HyprDE/releases/`.
+
 > [!TIP]
 > You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_user.lst` and pass the file as a parameter to install it like so:
 >
