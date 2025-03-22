@@ -56,15 +56,15 @@ Here are all HyDE specific keybindings listed.
 
 | Keys                                                 | Action                          |
 | :--------------------------------------------------- | :------------------------------ |
-| <kbd>CTRL</kbd> + <kbd>Q</kbd>                       | close focused window            |
+| <kbd>SUPER</kbd> + <kbd>Q</kbd>                      | close focused window            |
 | <kbd>ALT</kbd> + <kbd>F4</kbd>                       | close focused window            |
 | <kbd>SUPER</kbd> + <kbd>Delete</kbd>                 | kill hyprland session           |
 | <kbd>SUPER</kbd> + <kbd>W</kbd>                      | toggle float                    |
 | <kbd>SUPER</kbd> + <kbd>G</kbd>                      | toggle group                    |
-| <kbd>Shift</kbd> + <kbd>F11</kbd>                    | toggle fullscreen               |
+| <kbd>ALT</kbd> + <kbd>Return</kbd>                   | toggle fullscreen               |
 | <kbd>SUPER</kbd> + <kbd>L</kbd>                      | lock screen                     |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>F</kbd>   | toggle pin on focused window    |
-| <kbd>ALT</kbd> + <kbd>CTRL</kbd> + <kbd>Delete</kbd> | logout menu                     |
+| <kbd>SUPER</kbd> + <kbd>Backspace</kbd>              | logout menu                     |
 | <kbd>ALT</kbd> + <kbd>Control_R</kbd>                | toggle waybar and reload config |
 | <kbd>SUPER</kbd> + <kbd>J</kbd>                      | toggle split                    |
 
@@ -99,7 +99,7 @@ Here are all HyDE specific keybindings listed.
 | :-------------------------------------- | :-------------------- |
 | <kbd>SUPER</kbd> + <kbd>mouse:272</kbd> | hold to move window   |
 | <kbd>SUPER</kbd> + <kbd>mouse:273</kbd> | hold to resize window |
-| <kbd>SUPER</kbd> + <kbd>Z</kbd>         | hold to move window   |
+| <kbd>SUPER</kbd> + <kbd>D</kbd>         | hold to move window   |
 | <kbd>SUPER</kbd> + <kbd>X</kbd>         | hold to resize window |
 
 <!-- ## <a id=misc>Misc</a> -->
@@ -119,17 +119,17 @@ Here are all HyDE specific keybindings listed.
 
 | Keys                                                   | Action            |
 | :----------------------------------------------------- | :---------------- |
-| <kbd>SUPER</kbd> + <kbd>T</kbd>                        | terminal emulator |
-| <kbd>SUPER</kbd> + <kbd>E</kbd>                        | file explorer     |
+| <kbd>SUPER</kbd> + <kbd>Return</kbd>                   | terminal emulator |
+| <kbd>SUPER</kbd> + <kbd>F</kbd>                        | file explorer     |
 | <kbd>SUPER</kbd> + <kbd>C</kbd>                        | text editor       |
-| <kbd>SUPER</kbd> + <kbd>B</kbd>                        | web browser       |
+| <kbd>SUPER</kbd> + <kbd>E</kbd>                        | web browser       |
 | <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>Escape</kbd> | system monitor    |
 
 ### Rofi menus
 
 | Keys                                               | Action               |
 | :------------------------------------------------- | :------------------- |
-| <kbd>ALT</kbd> + <kbd>space</kbd>                  | application finder   |
+| <kbd>SUPER</kbd> + <kbd>A</kbd>                    | application finder   |
 | <kbd>SUPER</kbd> + <kbd>TAB</kbd>                  | window switcher      |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>E</kbd> | file finder          |
 | <kbd>SUPER</kbd> + <kbd>slash</kbd>                | keybindings hint     |
@@ -153,6 +153,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>None</kbd> + <kbd>XF86AudioMicMute</kbd>     | un/mute microphone |
 | <kbd>None</kbd> + <kbd>XF86AudioLowerVolume</kbd> | decrease volume    |
 | <kbd>None</kbd> + <kbd>XF86AudioRaiseVolume</kbd> | increase volume    |
+| <kbd>Shift</kbd> + <kbd>XF86AudioMute</kbd>       | set volume to 0    |
 
 ### Media
 
@@ -177,16 +178,20 @@ Here are all HyDE specific keybindings listed.
 | :----------------------------------------------- | :--------------------- |
 | <kbd>SUPER</kbd> + <kbd>K</kbd>                  | toggle keyboard layout |
 | <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>G</kbd> | game mode              |
+| <kbd>None</kbd> + <kbd>XF86PowerOff</kbd>        | suspends device        |
+| <kbd>SUPER</kbd> + <kbd>Z</kbd>                  | toggle desktop zoom    |
 
 ### Screen Capture
 
-| Keys                                               | Action                 |
-| :------------------------------------------------- | :--------------------- |
-| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> | color picker           |
-| <kbd>SUPER</kbd> + <kbd>P</kbd>                    | snip screen            |
-| <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>P</kbd>  | freeze and snip screen |
-| <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>P</kbd>   | print monitor          |
-| <kbd>None</kbd> + <kbd>Print</kbd>                 | print all monitors     |
+| Keys                                               | Action                          |
+| :------------------------------------------------- | :------------------------------ |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>P</kbd> | color picker                    |
+| <kbd>SUPER</kbd> + <kbd>P</kbd>                    | snip screen                     |
+| <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>P</kbd>  | freeze and snip screen          |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>J</kbd> | toggles screen recording        |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>K</kbd> | toggles OBS screen recording    |
+| <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>P</kbd>   | print monitor                   |
+| <kbd>None</kbd> + <kbd>Print</kbd>                 | print all monitors              |
 
 <!-- ## <a id=theming-and-wallpaper>Theming and Wallpaper</a> -->
 ## <a id=theming-and-wallpaper></a><img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=23&pause=1000&color=CCA9DD&width=435&lines=Theming%20and%20Wallpaper" width="450"/>
@@ -218,6 +223,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>8</kbd>                      | navigate to workspace 8                 |
 | <kbd>SUPER</kbd> + <kbd>9</kbd>                      | navigate to workspace 9                 |
 | <kbd>SUPER</kbd> + <kbd>0</kbd>                      | navigate to workspace 10                |
+| <kbd>ALT</kbd> + <kbd>Tab</kbd>                      | change to previous workspace            |
 | <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>Down</kbd> | navigate to the nearest empty workspace |
 | <kbd>SUPER</kbd> + <kbd>mouse_down</kbd>             | next workspace                          |
 | <kbd>SUPER</kbd> + <kbd>mouse_up</kbd>               | previous workspace                      |
@@ -272,16 +278,12 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>CTRL</kbd> + <kbd>Right</kbd> | move window to next relative workspace     |
 | <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>CTRL</kbd> + <kbd>Left</kbd>  | move window to previous relative workspace |
 
-<!--
-<div align="right">
-  <br>
-  <a href="#-design-by-t2"><kbd> <br> 🡅 <br> </kbd></a>
-</div>
+### User Apps
 
-<div align="center">
-
-</div>
--->
+| Keys                                               | Action                         |
+| :------------------------------------------------- | :----------------------------- |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd> | opens discord in workspace 10  |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd> | opens spotify in workspace 9   |
 
 <div align="right">
   <br>
@@ -289,5 +291,5 @@ Here are all HyDE specific keybindings listed.
 </div>
 
 <div align="right">
-  <sub>Last edited on: 02/01/2025<span id="last-edited"></span></sub>
+  <sub>Last edited on: 06/30/2024<span id="last-edited"></span></sub>
 </div>
