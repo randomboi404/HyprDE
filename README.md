@@ -49,13 +49,13 @@ To install, execute the following commands:
 pacman -S --needed git base-devel
 git clone --depth 1 https://github.com/randomboi404/HyprDE ~/HyprDE
 cd ~/HyprDE/Scripts
-./install.sh
+./install.sh pkg_extra.lst
 ```
 
 OR, to install the stable release version, head over to `https://github.com/randomboi404/HyprDE/releases/`.
 
 > [!TIP]
-> You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_user.lst` and pass the file as a parameter to install it like so:
+> You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_extra.lst` at the end of the file or add it to `Scripts/pkg_user.lst` if you do not want the extra pkgs and pass the file as a parameter to install it like so:
 >
 > ```shell
 > ./install.sh pkg_user.lst
