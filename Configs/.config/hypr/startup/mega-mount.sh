@@ -5,6 +5,8 @@ until ping -c 1 www.google.com &> /dev/null; do
     sleep 60
 done
 
+mkdir -p ~/MEGA
+
 # Check if already mounted
 if ! mountpoint -q ~/MEGA; then
     sudo rclone mount mega: ~/MEGA \

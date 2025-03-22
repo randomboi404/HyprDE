@@ -34,6 +34,11 @@ P|${HOME}/.config/hypr|hyde.conf animations.conf windowrules.conf keybindings.co
 P|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
 P|${HOME}/.config/hypr/themes|theme.conf wallbash.conf colors.conf|hyprland
 P|${HOME}/.local/state/hyde|hyprland.conf|hyprland
+P|${HOME}/.config/hypr|hyprsunset.json|hyprland
+P|${HOME}/.config/hypr|pyprland.toml|hyprland
+P|${HOME}/.config/hypr|autostart.conf|hyprland
+P|${HOME}/.config/hypr|hypridle.conf|hyprland
+P|${HOME}/.config/hypr|startup|hyprland
 
 S|${HOME}/.config/hypr|hyprland.conf|hyprland
 S|${HOME}/.local|bin|hyprland
@@ -45,7 +50,8 @@ S|${HOME}/.config|Kvantum|kvantum
 S|${HOME}/.config|qt5ct|qt5ct
 S|${HOME}/.config|qt6ct|qt6ct
 S|${HOME}/.config/hyde|wallbash|hyprland
-S|${HOME}/.config/hypr|animations|hyprland  
+S|${HOME}/.config/hypr|animations|hyprland
+S|${HOME}/.config/hypr|hyprlock|hyprland
 
 O|${HOME}/.local/share|hyde|hyprland
 O|${HOME}/.local/lib|hyde|hyprland
@@ -63,6 +69,8 @@ S|${HOME}/.config/waybar|modules config.jsonc theme.css style.css|waybar
 P|${HOME}/.config|lsd|lsd
 P|${HOME}/.config|fastfetch|fastfetch
 O|${HOME}/.local/share/fastfetch/presets|hyde|fastfetch
+P|${HOME}/.config|starship.toml|starship
+S|${HOME}/.config/fastfetch|config.jsonc logo|fastfetch
 
 S|${HOME}/.config/kitty|hyde.conf theme.conf|kitty
 P|${HOME}/.config/kitty|kitty.conf|kitty

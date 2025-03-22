@@ -84,6 +84,11 @@ if [ "${bootbkpopt}" = "y" ]; then
     sudo pacman -S --needed --noconfirm thunar gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-smb udisks2 polkit tumbler
 fi
 
+# setup gnome-keyring
+sudo pacman -S --noconfirm gnome-keyring seahorse
+systemctl --user enable gnome-keyring-daemon.service
+systemctl --user start gnome-keyring-daemon.service
+
 # flatpak
 if ! pkg_installed flatpak; then
     print_log -r "[FLATPAK]" -b "list :: " "flatpak application"
