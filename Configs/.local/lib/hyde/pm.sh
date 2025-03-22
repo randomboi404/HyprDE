@@ -480,7 +480,7 @@ paru_format_installed() {
 }
 
 paru_is_installed() {
-    paru -Q "$1" >/dev/null 2>&1 && echo "Installed" || echo "Not installed"
+    paru -Q "$1" >/dev/null 2>&1
 }
 
 paru_file_query() {
@@ -532,7 +532,7 @@ yay_format_installed() {
 }
 
 yay_is_installed() {
-    yay -Q "$1" >/dev/null 2>&1 && echo "Installed" || echo "Not installed"
+    yay -Q "$1" >/dev/null 2>&1
 }
 
 yay_file_query() {
