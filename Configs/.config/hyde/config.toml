@@ -4,7 +4,7 @@
 
 [wallpaper]
  custom_paths = [
-    "$HOME/dotfiles/Pictures/Wallpapers",
+    "$HOME/Pictures/Wallpapers",
 ]
 
 [battery.notify]
