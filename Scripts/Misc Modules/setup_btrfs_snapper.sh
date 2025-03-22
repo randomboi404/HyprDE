@@ -1,24 +1,37 @@
 #!/usr/bin/env bash
 
+set -e  # Exit immediately if a command exits with a non-zero status
+
+# Default subvolume names used in many BTRFS snapshot setups.
+ROOT_SUBVOL="@"
+HOME_SUBVOL="@home"
+
 # Check if the root filesystem is BTRFS
-fstype=$(findmnt -n -o FSTYPE /)
-if [ "$fstype" != "btrfs" ]; then
-    echo "Error: Filesystem is not BTRFS, hence snapper cannot be configured."
-    echo "This is not an error - the system will continue without BTRFS snapshots."
+if ! sudo findmnt -t btrfs -n / >/dev/null 2>&1; then
+    echo "The root filesystem is not BTRFS. Exiting."
     exit 0
 fi
 
-# Check for "root" and "home" subvolumes
-if ! btrfs subvolume list / 2>/dev/null | grep -q "path root\$"; then
-    echo "Error: 'root' subvolume not found."
-    echo "This is not an error - the system will continue without BTRFS snapshots."
+# Get the list of subvolumes from the root
+subvol_list=$(sudo btrfs subvolume list / 2>/dev/null)
+
+# Check for the expected root subvolume (e.g., '@')
+if ! echo "$subvol_list" | grep -q "path $ROOT_SUBVOL\$"; then
+    echo "Error: Subvolume '$ROOT_SUBVOL' not found on the root filesystem."
+    echo "Exiting without configuring snapper."
     exit 0
+else
+    echo "Found root subvolume '$ROOT_SUBVOL'."
+    create_root_config=true
 fi
 
-if ! btrfs subvolume list / 2>/dev/null | grep -q "path home\$"; then
-    echo "Error: 'home' subvolume not found."
-    echo "This is not an error - the system will continue without BTRFS snapshots."
-    exit 0
+# Check for the expected home subvolume (e.g., '@home')
+if echo "$subvol_list" | grep -q "path $HOME_SUBVOL\$"; then
+    echo "Found home subvolume '$HOME_SUBVOL'."
+    create_home_config=true
+else
+    echo "Warning: Subvolume '$HOME_SUBVOL' not found on the root filesystem."
+    echo "The system will continue without BTRFS snapshots for the home directory."
 fi
 
 # Detect available AUR helper: prefer paru over yay
@@ -48,9 +61,16 @@ echo "Enabling grub-btrfsd.service..."
 sudo systemctl enable --now grub-btrfsd.service
 
 # Create snapper configuration for "/" if it does not exist
-if [ ! -f /etc/snapper/configs/root ]; then
+if [ "$create_root_config" = true ] && [ ! -f /etc/snapper/configs/root ]; then
     echo "Creating snapper configuration for /..."
     sudo snapper -c root create-config /
 fi
 
+# Create snapper configuration for "/home" if it does not exist
+if [ "$create_home_config" = true ] && [ ! -f /etc/snapper/configs/home ]; then
+    echo "Creating snapper configuration for /home..."
+    sudo snapper -c home create-config /home
+fi
+
 echo "BTRFS Snapper setup completed successfully!"
+echo "Make sure to setup other subvolumes as well if any."

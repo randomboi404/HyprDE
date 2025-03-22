@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e  # Exit immediately if a command exits with a non-zero status
+
 # Check if rsync is installed
 if ! command -v rsync &>/dev/null; then
     echo "Error: rsync is not installed. Installing rsync..."
