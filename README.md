@@ -59,8 +59,7 @@ cd ~/HyprDE/Scripts
 > ./install.sh pkg_user.lst
 > ```
 >
-> For OBS Studio, make sure to open it, Click on Tools > WebSocket Server Settings
-> And then enable websocket server and disable authentication.
+> For OBS Studio, make sure to open it, Click on Tools > WebSocket Server Settings and then enable websocket server and disable authentication.
 
 > [!IMPORTANT]
 > Refer your list from `Scripts/pkg_extra.lst`
