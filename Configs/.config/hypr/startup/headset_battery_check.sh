@@ -19,7 +19,7 @@ check_battery() {
     fi
 
     if [ "$battery_percentage" -eq 50 ]; then
-        notify-send "Half Headphone Battery" "Headphone battery is currently at 50%."
+        notify-send "Half Headphone Battery" "Headphones battery is currently at 50%."
     fi
 
     # Compare the battery percentage with threshold (30%)
@@ -27,7 +27,7 @@ check_battery() {
         if [ "$battery_percentage" -eq "$battery_during_msg" ]; then
             return
         fi
-        notify-send "Low Headphone Battery" "Headphone battery is currently at $battery_percentage%."
+        notify-send "Low Headphones Battery" "Headphones battery is currently at $battery_percentage%."
         battery_during_msg=$battery_percentage
     fi
 }

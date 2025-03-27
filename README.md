@@ -43,6 +43,27 @@ While installing HyDE alongside another [DE](https://wiki.archlinux.org/title/De
 > [!CAUTION]
 > The script modifies your `grub` or `systemd-boot` config to enable NVIDIA DRM.
 
+---
+
+### **What this project does differently than the original HyDE:**  
+
+- Includes my custom dotfiles, with different default settings, keybindings, etc.  
+- Adds an option to install an additional **'CyberRe'** GRUB theme and a custom wallpaper.  
+- Configures various features out of the box, such as:  
+  - OBS Studio screen recording  
+  - GPU-based screen recording  
+  - Pyprland zoom support  
+  - Changing the default power button behavior  
+  - Adjusting GRUB timeout, etc.  
+- Automatically sets up support for **Lutris gaming** by installing Vulkan drivers, etc.  
+- Configures **BTRFS Snapper support** if BTRFS is installed with the correct subvolumes.  
+- Sets up a **pacman hook** to back up `/boot` in case of kernel updates.  
+- Adds a script to easily stow all configs from the `Configs/` directory.  
+- Installs various additional packages (modifiable via pkg_* files).  
+- And... Many More!
+
+---
+
 To install, execute the following commands:
 
 ```shell
