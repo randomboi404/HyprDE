@@ -60,6 +60,40 @@ fi
 # shell
 "${scrDir}/restore_shl.sh"
 
+# backup of /boot during pacman kernel updates
+prompt_timer 60 "Automatically backup /boot for every kernel update? [Y/n]"
+bootbkpopt=${PROMPT_INPUT,,}
+
+if [ "${bootbkpopt}" = "y" ]; then
+    print_log -g "[BOOT BACKUP]" -b "configure :: " "backup script"
+    "${scrDir}/Misc Modules/boot_backup.sh"
+fi
+
+# power button behaviour
+"${scrDir}/Misc Modules/change_pwr_btn_behaviour.sh"
+
+# setup btrfs snapper
+"${scrDir}/Misc Modules/setup_btrfs_snapper.sh"
+
+# install thunar
+prompt_timer 60 "Setup Thunar File Manager? (Dolphin already exists) [Y/n]"
+bootbkpopt=${PROMPT_INPUT,,}
+
+if [ "${bootbkpopt}" = "y" ]; then
+    print_log -g "[THUNAR]" -b "install :: " "thunar file manager"
+    sudo pacman -S --needed --noconfirm thunar gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-smb udisks2 polkit tumbler
+fi
+
+# setup gnome-keyring
+sudo pacman -S --noconfirm gnome-keyring seahorse
+systemctl --user enable gnome-keyring-daemon.service
+systemctl --user start gnome-keyring-daemon.service
+
+# sets up obs-cli for obs studio
+if command -v obs &> /dev/null && command -v pipx &> /dev/null; then
+    pipx install obs-cli
+fi
+
 # flatpak
 if ! pkg_installed flatpak; then
     print_log -r "[FLATPAK]" -b "list :: " "flatpak application"
@@ -77,3 +111,6 @@ if ! pkg_installed flatpak; then
 else
     print_log -y "[FLATPAK]" -b " :: " "flatpak is already installed"
 fi
+
+mkdir -p ~/Pictures/Wallpapers
+cp "${scrDir}/Wallpapers/"* ~/Pictures/Wallpapers/

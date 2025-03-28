@@ -167,11 +167,11 @@ fi
 
 pkg_installed() {
     local pkgIn=$1
-    if command -v "${pkgIn}" &>/dev/null; then
+    if hyde-shell pm.sh pq "${pkgIn}" &>/dev/null; then
         return 0
-    elif command -v "flatpak" &>/dev/null && flatpak info "${pkgIn}" &>/dev/null; then
+    elif pacman -Qi "flatpak" &>/dev/null && flatpak info "${pkgIn}" &>/dev/null; then
         return 0
-    elif hyde-shell pm.sh pq "${pkgIn}" &>/dev/null; then
+    elif command -v "${pkgIn}" &>/dev/null; then
         return 0
     else
         return 1
@@ -272,26 +272,6 @@ print_log() {
         esac
     done
     echo ""
-}
-
-check_package() {
-
-    local lock_file="${XDG_RUNTIME_DIR:-/tmp}/hyde/__package.lock"
-    mkdir -p "${XDG_RUNTIME_DIR:-/tmp}/hyde"
-
-    if [ -f "$lock_file" ]; then
-        return 0
-    fi
-
-    for pkg in "$@"; do
-        if ! pkg_installed "${pkg}"; then
-            print_log -err "Package is not installed" "'${pkg}'"
-            rm -f "$lock_file"
-            exit 1
-        fi
-    done
-
-    touch "$lock_file"
 }
 
 # Yes this is so slow but it's the only way to ensure that parsing behaves correctly

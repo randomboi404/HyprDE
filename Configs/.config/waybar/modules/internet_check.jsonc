@@ -1,0 +1,7 @@
+"custom/internet_check": {
+    "exec": "internet_check.sh",
+    "return-type": "json",
+    "interval": 10,
+    "on-click": "internet_check.sh",
+    "tooltip": true
+},

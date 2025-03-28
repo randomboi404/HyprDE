@@ -299,6 +299,9 @@ fi
 
 if [ $flg_Install -eq 1 ]; then
     print_log -stat "\nInstallation" "completed"
+    if command -v obs &> /dev/null && command -v pipx &> /dev/null; then
+        print_log -stat "\nOBS Studio" "make sure to open it, Click on Tools > WebSocket Server Settings and then enable websocket server and disable authentication."
+    fi
 fi
 print_log -stat "Log" "View logs at ${cacheDir}/logs/${HYDE_LOG}"
 if [ $flg_Install -eq 1 ] ||

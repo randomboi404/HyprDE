@@ -1,14 +1,17 @@
 # --------------------------------------------------- // System
-# downgrade                                            # downgrade packages
+downgrade                                            # downgrade packages
 # trash-cli-git                                        # cli to manage trash files
 # libinput-gestures                                    # actions touchpad gestures using libinput
 # gestures                                             # gui for libinput-gestures
-wttrbar                                                # for weather
-python-requests|wttrbar                                # script dependency
-ddcui                                                  # GUI to control brightness for external monitors
+# wttrbar                                                # for weather
+# python-requests|wttrbar                                # script dependency
+# ddcui                                                  # GUI to control brightness for external monitors
 # hyprgui-bin                                          # GUI for hyprland configuration // might mess your userprefs but convenient // Just disappeared
+# swappy                                               # screenshot editor, DEPRECATED in favor for satty
+# python-pyamdgpuinfo                                  # for amd gpu info // Deprecated as of https://github.com/HyDE-Project/HyDE/pull/345
 
 # --------------------------------------------------- // Shell
+# oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh // already installed locally
 
 
 # --------------------------------------------------- // Misc
@@ -19,20 +22,20 @@ xdg-desktop-portal-gtk                                 # xdg desktop portal usin
 steam                                                  # gaming platform
 gamemode                                               # daemon and library for game optimizations
 mangohud                                               # system performance overlay
-# gamescope                                            # micro-compositor for gaming
-# lutris                                               # Lutris is an open source gaming platform for Linux
+gamescope                                            # micro-compositor for gaming
+lutris                                               # Lutris is an open source gaming platform for Linux
 
 # --------------------------------------------------- // Music
 cava                                                   # audio visualizer
-spotify                                                # proprietary music streaming service
-spicetify-cli                                          # cli to customize spotify client
+# spotify                                                # proprietary music streaming service
+# spicetify-cli                                          # cli to customize spotify client
 
 # --------------------------------------------------- // Apps
-# neovim                                               # vim based text editor
+neovim                                               # vim based text editor
 
 # --------------------------------------------------- // Shell
 # oh-my-zsh-git|zsh                                      # Optional plugin manager for zsh
-# pokemon-colorscripts-git|zsh                           # display pokemon sprites (optional)
+pokemon-colorscripts-git                           # display pokemon sprites (optional)
 
 # --------------------------------------------------- // Editor
 # vscodium                                              # Full oss text editor
@@ -48,3 +51,15 @@ spicetify-cli                                          # cli to customize spotif
 
 # --------------------------------------------------- // OSD
 swayosd-git                                             #A GTK based on screen display for keyboard shortcuts like caps-lock and volume
+
+# --------------------------------------------------- // OBS Studio
+obs-studio-stable
+python-pipx
+gnu-netcat
+
+# --------------------------------------------------- // Other important tools
+ani-cli-git
+auto-cpufreq
+gpu-screen-recorder
+pyprland
+tealdeer

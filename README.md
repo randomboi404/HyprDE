@@ -1,24 +1,4 @@
-
-<div align = center>
-  <a href="https://discord.gg/AYbJ9MJez7">
-    <img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FmT5YqjaJFh%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20members&style=for-the-badge&logo=discord&logoSize=auto&label=The%20HyDe%20Project&labelColor=ebbcba&color=c79bf0">
-  </a>
-</div>
-
-###### _<div align="right"><a id=-design-by-t2></a><sub>// design by t2</sub></div>_
-
 ![hyde_banner](Source/assets/hyde_banner.png)
-
-<!--
-Multi-language README support
--->
-
-[![es](https://img.shields.io/badge/lang-es-yellow.svg)](Source/docs/README.es.md)
-[![de](https://img.shields.io/badge/lang-de-black.svg)](Source/docs/README.de.md)
-[![nl](https://img.shields.io/badge/lang-nl-green.svg)](Source/docs/README.nl.md)
-[![中文](https://img.shields.io/badge/lang-中文-orange.svg)](Source/docs/README.zh.md)
-[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](Source/docs/README.fr.md)
-[![ar](https://img.shields.io/badge/lang-AR-orange.svg)](Source/docs/README.ar.md)
 
 <div align="center">
 
@@ -45,28 +25,16 @@ Multi-language README support
   </div>
 </div>
 
-Check this out for the full note:
-[Journey to HyDE and beyond](./Hyprdots-to-HyDE.md)
-
-<!--
-<img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FmT5YqjaJFh%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20members&style=for-the-badge&logo=discord&logoSize=auto&label=The%20HyDe%20Project&labelColor=ebbcba&color=c79bf0">
-
-<img alt="Dynamic JSON Badge" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FmT5YqjaJFh%3Fwith_counts%3Dtrue&query=%24.approximate_presence_count&suffix=%20online&style=for-the-badge&logo=discord&logoSize=auto&label=The%20HyDe%20Project&labelColor=ebbcba&color=c79bf0">
--->
-
 <https://github.com/prasanthrangan/hyprdots/assets/106020512/7f8fadc8-e293-4482-a851-e9c6464f5265>
 
 <br>
 
 <a id="installation"></a>
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=CCA9DD&vCenter=true&width=435&height=25&lines=INSTALLATION" width="450"/>
-
 ---
 
 The installation script is designed for a minimal [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux) install, but **may** work on some [Arch-based distros](https://wiki.archlinux.org/title/Arch-based_distributions).
 While installing HyDE alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK)/[Qt](https://wiki.archlinux.org/title/Qt) theming, [Shell](https://wiki.archlinux.org/title/Command-line_shell), [SDDM](https://wiki.archlinux.org/title/SDDM), [GRUB](https://wiki.archlinux.org/title/GRUB), etc. and is at your own risk.
-
-For NixOS support there is a separate project being maintained @ [Hydenix](https://github.com/richen604/hydenix/tree/main)
 
 > [!IMPORTANT]
 > The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
@@ -75,25 +43,50 @@ For NixOS support there is a separate project being maintained @ [Hydenix](https
 > [!CAUTION]
 > The script modifies your `grub` or `systemd-boot` config to enable NVIDIA DRM.
 
+---
+
+### **What this project does differently than the original HyDE:**  
+
+- Includes my custom dotfiles, with different default settings, keybindings, etc.  
+- Adds an option to install an additional **'CyberRe'** GRUB theme and a custom wallpaper.  
+- Configures various features out of the box, such as:  
+  - OBS Studio screen recording  
+  - GPU-based screen recording  
+  - Pyprland zoom support  
+  - Changing the default power button behavior  
+  - Adjusting GRUB timeout, etc.  
+- Automatically sets up support for **Lutris gaming** by installing Vulkan drivers, etc.  
+- Configures **BTRFS Snapper support** if BTRFS is installed with the correct subvolumes.  
+- Sets up a **pacman hook** to back up `/boot` in case of kernel updates.  
+- Adds a script to easily stow all configs from the `Configs/` directory.  
+- Installs various additional packages (modifiable via pkg_* files).  
+- And... Many More!
+
+---
+
 To install, execute the following commands:
 
 ```shell
 pacman -S --needed git base-devel
-git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
-cd ~/HyDE/Scripts
-./install.sh
+git clone --depth 1 https://github.com/randomboi404/HyprDE ~/HyprDE
+cd ~/HyprDE/Scripts
+./install.sh pkg_extra.lst
 ```
 
+OR, to install the stable release version, head over to `https://github.com/randomboi404/HyprDE/releases/`.
+
 > [!TIP]
-> You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_user.lst` and pass the file as a parameter to install it like so:
+> You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_extra.lst` at the end of the file or add it to `Scripts/pkg_user.lst` if you do not want the extra pkgs and pass the file as a parameter to install it like so:
 >
 > ```shell
 > ./install.sh pkg_user.lst
 > ```
+>
+> For OBS Studio, make sure to open it, Click on Tools > WebSocket Server Settings and then enable websocket server and disable authentication.
 
 > [!IMPORTANT]
 > Refer your list from `Scripts/pkg_extra.lst`
-> or you can `cp  Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to install all extra packages.
+> or you can `cp Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to install all extra packages.
 
 <!--
 
@@ -102,7 +95,7 @@ View installation instructions for HyDE in [Hyde-cli - Usage](https://github.com
 -->
 
 Please reboot after the install script completes and takes you to the SDDM login screen (or black screen) for the first time.
-For more details, please refer to the [installation wiki](https://github.com/HyDE-Project/HyDE/wiki/installation).
+For more details, please refer to the original project's [installation wiki](https://github.com/HyDE-Project/HyDE/wiki/installation).
 
 <div align="right">
   <br>
@@ -111,13 +104,12 @@ For more details, please refer to the [installation wiki](https://github.com/HyD
 
 <a id="updating"></a>
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=CCA9DD&vCenter=true&width=435&height=25&lines=UPDATING" width="450"/>
-
 ---
 
 To update HyDE, you will need to pull the latest changes from GitHub and restore the configs by running the following commands:
 
 ```shell
-cd ~/HyDE/Scripts
+cd ~/HyprDE/Scripts
 git pull origin master
 ./install.sh -r
 ```
@@ -136,9 +128,8 @@ For more details, you can refer to [Hyde-cli - dots management wiki](https://git
   <a href="#-design-by-t2"><kbd> <br> 🡅 <br> </kbd></a>
 </div>
 
-<a id="themes"></a>
+<a id="themes"></a>  
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=CCA9DD&vCenter=true&width=435&height=25&lines=THEMES" width="450"/>
-
 ---
 
 All our official themes are stored in a separate repository, allowing users to install them using themepatcher.
@@ -173,9 +164,8 @@ For more information, visit [HyDE-Project/hyde-themes](https://github.com/HyDE-P
   <a href="#-design-by-t2"><kbd> <br> 🡅 <br> </kbd></a>
 </div>
 
-<a id="styles"></a>
+<a id="styles"></a>  
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=CCA9DD&vCenter=true&width=435&height=25&lines=STYLES" width="450"/>
-
 ---
 
 <div align="center"><table><tr>Theme Select</tr><tr><td>
@@ -234,18 +224,5 @@ For more information, visit [HyDE-Project/hyde-themes](https://github.com/HyDE-P
 </div>
 
 <div align="right">
-  <sub>Last edited on: 27/02/2025<span id="last-edited"></span></sub>
+  <sub>Last edited on: 22/03/2025<span id="last-edited"></span></sub>
 </div>
-
-<a id="star_history"></a>
-<img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=CCA9DD&vCenter=true&width=435&height=25&lines=STARS" width="450"/>
-
----
-
-<a href="https://star-history.com/#hyde-project/hyde&hyde-project/hyde-gallery&hyde-project/hyde-themes&Timeline">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hyde-project/hyde&type=Timeline&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hyde-project/hyde&type=Timeline" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=hyde-project/hyde&type=Timeline" />
- </picture>
-</a>
