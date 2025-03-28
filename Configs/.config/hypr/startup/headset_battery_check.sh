@@ -1,6 +1,7 @@
 #!/bin/bash
 
 battery_during_msg=0
+notified_50=0
 
 check_battery() {
     # Gets info about headset from upower output
@@ -18,8 +19,15 @@ check_battery() {
         return
     fi
 
-    if [ "$battery_percentage" -eq 50 ]; then
+    # Send 50% notification only once
+    if [ "$battery_percentage" -eq 50 ] && [ "$notified_50" -eq 0 ]; then
         notify-send "Half Headphone Battery" "Headphones battery is currently at 50%."
+        notified_50=1
+    fi
+
+    # Reset the 50% notification flag if battery goes above 50%
+    if [ "$battery_percentage" -gt 50 ]; then
+        notified_50=0
     fi
 
     # Compare the battery percentage with threshold (30%)
