@@ -8,23 +8,10 @@
 
 ![hyde_banner](Source/assets/hyde_banner.png)
 
-<!--
-Multi-language KEYBINDINGS support
--->
-
-<!-- [![en](https://img.shields.io/badge/lang-en-red.svg)](KEYBINDINGS.md) -->
-[![es](https://img.shields.io/badge/lang-es-yellow.svg)](Source/docs/KEYBINDINGS.es.md)
-[![de](https://img.shields.io/badge/lang-de-black.svg)](Source/docs/KEYBINDINGS.de.md)
-[![nl](https://img.shields.io/badge/lang-nl-green.svg)](Source/docs/KEYBINDINGS.nl.md)
-[![中文](https://img.shields.io/badge/lang-中文-orange.svg)](Source/docs/KEYBINDINGS.zh.md)
-[![fr](https://img.shields.io/badge/lang-fr-blue.svg)](Source/docs/KEYBINDINGS.fr.md)
-[![ar](https://img.shields.io/badge/lang-AR-orange.svg)](Source/docs/KEYBINDINGS.ar.md)
-
 <div align="center">
 
 <br>
 
-<!-- <a href=#hyde-keybindings><kbd> <br> HyDE keybindings <br> </kbd></a>&ensp;&ensp; -->
 <a href=#window-management><kbd> <br> Window Management <br> </kbd></a>&ensp;&ensp;
 <a href=#misc><kbd> <br> Misc <br> </kbd></a>&ensp;&ensp;
 <a href=#launcher><kbd> <br> Launcher <br> </kbd></a>&ensp;&ensp;
@@ -68,6 +55,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>ALT</kbd> + <kbd>CTRL</kbd> + <kbd>Delete</kbd> | logout menu                     |
 | <kbd>ALT</kbd> + <kbd>Control_R</kbd>                | toggle waybar and reload config |
 | <kbd>SUPER</kbd> + <kbd>J</kbd>                      | toggle split                    |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>Q</kbd>   | force close window              |
 
 ### Group Navigation
 
@@ -84,6 +72,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>Right</kbd> | focus right |
 | <kbd>SUPER</kbd> + <kbd>Up</kbd>    | focus up    |
 | <kbd>SUPER</kbd> + <kbd>Down</kbd>  | focus down  |
+| <kbd>SUPER</kbd> + <kbd>Tab</kbd>   | cycle focus |
 
 ### Resize Active Window
 
@@ -139,6 +128,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>V</kbd>                    | clipboard            |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>V</kbd> | clipboard manager    |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>A</kbd> | select rofi launcher |
+| <kbd>SUPER</kbd> + <kbd>F1</kbd>                   | help menu            |
 
 <!-- ## <a id="hardware-controls">Hardware Controls</a> -->
 ## <a id="hardware-controls"></a><img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=23&pause=1000&color=CCA9DD&width=435&lines=Hardware%20Controls" width="450"/>
@@ -188,6 +178,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>CTRL</kbd> + <kbd>P</kbd>  | freeze and snip screen |
 | <kbd>SUPER</kbd> + <kbd>ALT</kbd> + <kbd>P</kbd>   | print monitor          |
 | <kbd>None</kbd> + <kbd>Print</kbd>                 | print all monitors     |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>S</kbd> | region screenshot      |
 
 <!-- ## <a id=theming-and-wallpaper>Theming and Wallpaper</a> -->
 ## <a id=theming-and-wallpaper></a><img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=23&pause=1000&color=CCA9DD&width=435&lines=Theming%20and%20Wallpaper" width="450"/>
@@ -267,6 +258,7 @@ Here are all HyDE specific keybindings listed.
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>8</kbd> | move to workspace 8  |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>9</kbd> | move to workspace 9  |
 | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>0</kbd> | move to workspace 10 |
+| <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>Tab</kbd> | move to last workspace |
 
 | Keys                                                                   | Action                                     |
 | :--------------------------------------------------------------------- | :----------------------------------------- |
