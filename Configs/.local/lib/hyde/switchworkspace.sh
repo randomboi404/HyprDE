@@ -7,14 +7,6 @@ change_workspace() {
     if [ "$current_workspace" != "$2" ]; then
         hyprctl dispatch workspace "$2"
     else
-        if [ "$current_workspace" != "$previous_workspace" ]; then
-            hyprctl dispatch workspace "$previous_workspace"
-        fi
-    fi
-}
-
-change_workspace_previous() {
-    if [ "$current_workspace" != "$previous_workspace" ]; then
         hyprctl dispatch workspace "$previous_workspace"
     fi
 }
@@ -47,10 +39,7 @@ case "$1" in
     cw)
         change_workspace "$@"
         ;;
-    cwp)
-        change_workspace_previous "$@"
-        ;;
-    srwr)
+   srwr)
         switch_to_relative_workspace_right "$@"
         ;;
     srwl)
@@ -69,7 +58,7 @@ case "$1" in
         shift_to_workspace "$@"
         ;;
     *)
-        echo "Usage: $0 {cw|cwp|srwr|srwl|srawr|srawl|sfew|sw} <workspace>"
+        echo "Usage: $0 {cw|srwr|srwl|srawr|srawl|sfew|sw} <workspace>"
         exit 1
         ;;
 esac
