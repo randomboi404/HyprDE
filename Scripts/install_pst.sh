@@ -114,3 +114,6 @@ fi
 
 mkdir -p ~/Pictures/Wallpapers
 cp "${scrDir}/Wallpapers/"* ~/Pictures/Wallpapers/
+
+mkdir -p ~/Templates
+cp "${scrDir}/../Configs/Templates/"* ~/Templates/
