@@ -117,3 +117,6 @@ cp "${scrDir}/Wallpapers/"* ~/Pictures/Wallpapers/
 
 mkdir -p ~/Templates
 cp "${scrDir}/../Configs/Templates/"* ~/Templates/
+
+mkdir -p ~/.config/nvim
+cp "${scrDir}/../Configs/nvim/"* ~/.config/nvim/
