@@ -28,6 +28,7 @@ hyprland                                               # wlroots-based wayland c
 dunst                                                  # notification daemon
 rofi-wayland                                           # application launcher
 waybar                                                 # system bar
+hyprswitch                                             # for windows switcher
 swww                                                   # wallpaper
 hyprlock                                               # lock screen
 wlogout                                                # logout menu
