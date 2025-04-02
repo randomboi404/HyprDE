@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 current_workspace=$(hyprctl activeworkspace -j | jq -r '.id')
-previous_workspace=$(cat ~/.cache/workspace/previous_workspace)
+previous_workspace=$(cat /tmp/workspace/previous_workspace)
 
 change_workspace() {
     if [ "$current_workspace" != "$2" ]; then

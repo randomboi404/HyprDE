@@ -4,12 +4,13 @@
 # saving the previous workspace to a designated file.
 
 # Path to the file where the previous workspace will be saved.
-OUTPUT_FILE="$HOME/.cache/workspace/previous_workspace"
+OUTPUT_DIR="/tmp/workspace"
+OUTPUT_FILE="$OUTPUT_DIR/previous_workspace"
 
 # Interval in seconds between checks.
 INTERVAL=0.2
 
-mkdir -p ~/.cache/workspace
+mkdir -p $OUTPUT_DIR
 
 # Function to get the current active workspace.
 get_active_workspace() {
