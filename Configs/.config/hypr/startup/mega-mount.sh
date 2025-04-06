@@ -18,3 +18,5 @@ if ! mountpoint -q ~/MEGA; then
         --allow-other \
         --daemon
 fi
+
+hyprctl dispatch exec pika-backup-monitor &

@@ -75,6 +75,9 @@ fi
 # setup btrfs snapper
 "${scrDir}/Misc Modules/setup_btrfs_snapper.sh"
 
+# setup auto clean pacman and aur cache
+"${scrDir}/Misc Modules/cache_cleanup.sh"
+
 # install thunar
 prompt_timer 60 "Setup Thunar File Manager? (Dolphin already exists) [Y/n]"
 bootbkpopt=${PROMPT_INPUT,,}
@@ -85,7 +88,7 @@ if [ "${bootbkpopt}" = "y" ]; then
 fi
 
 # setup gnome-keyring
-sudo pacman -S --noconfirm gnome-keyring seahorse
+sudo pacman -S --needed --noconfirm gnome-keyring seahorse
 systemctl --user enable gnome-keyring-daemon.service
 systemctl --user start gnome-keyring-daemon.service
 
