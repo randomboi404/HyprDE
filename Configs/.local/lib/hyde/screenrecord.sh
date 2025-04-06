@@ -33,11 +33,17 @@ start_recording() {
     local output_file="$VIDEO_DIR/recording_$(date +%Y%m%d_%H%M%S).mp4"
 
     # Start recording using gpu-screen-recorder with proper video and audio options.
-    # The command captures the full screen ("-w screen"), using the detected resolution and FPS.
+    # The command captures the full screen ("-w screen"), using the detected resolution and FPS or activates portal without 'fs' argument ("-w portal").
     # It now also captures system audio via the monitor of the default sink ("-a $audio_source").
-    gpu-screen-recorder -w screen -s "$resolution" -f "$fps" -a "$audio_source" -o "$output_file" &
+    echo "Second argument: '$1'"
+    if [ "$1" = "fs" ]; then
+        gpu-screen-recorder -w screen -s "$resolution" -f "$fps" -a "$audio_source" -o "$output_file" &
+        notify-send "Screen Recording" "Recording started at $resolution and ${fps} FPS."
+    else
+        gpu-screen-recorder -w portal -s "$resolution" -f "$fps" -a "$audio_source" -o "$output_file" &
+    fi
     echo $! > /tmp/screenrecord_pid
-    notify-send "Screen Recording" "Recording started at $resolution and ${fps} FPS."
+    
 }
 
 # Function to stop recording
@@ -54,7 +60,7 @@ stop_recording() {
 
 case "$1" in
     r) # Start recording
-        start_recording
+        start_recording "$2"
         ;;
     s) # Stop recording
         stop_recording
@@ -66,17 +72,18 @@ case "$1" in
                 stop_recording
             else
                 rm /tmp/screenrecord_pid
-                start_recording
+                start_recording "$2"
             fi
         else
-            start_recording
+            start_recording "$2"
         fi
         ;;
     *)
         echo "Usage: $0 <r|s|a>"
-        echo "    r  : Start fullscreen recording"
-        echo "    s  : Stop recording"
-        echo "    a  : Toggle recording (start if not recording; stop if recording)"
+        echo "    r       : Start fullscreen recording"
+        echo "    s       : Stop recording"
+        echo "    a       : Toggle recording (start if not recording; stop if recording)"
+        echo "    \$1 fs   : Starts recording with fullscreen without activating portal (optional; to be used with 'r' or 'a')"
         exit 1
         ;;
 esac
