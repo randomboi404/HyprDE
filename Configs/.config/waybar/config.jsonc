@@ -119,7 +119,7 @@
         "rotate": 0,
         "separate-outputs": true,
         "rewrite": {
-            "tanish@arch:(.*)": "$1 ",
+            "username@arch:(.*)": "$1 ",
             "(.*) — Mozilla Firefox": "$1 󰈹",
             "(.*)Mozilla Firefox": "Firefox 󰈹",
             "(.*) - Visual Studio Code": "$1 󰨞",
