@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e  # Exit immediately if a command exits with a non-zero status
+sudo -v # Prompt for sudo password
 
 # Check if rsync is installed
 if ! command -v rsync &>/dev/null; then

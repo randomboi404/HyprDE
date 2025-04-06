@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e  # Exit immediately if a command exits with a non-zero status
+sudo -v # Prompt for sudo password
 
 # Default subvolume names used in many BTRFS snapshot setups.
 ROOT_SUBVOL="@"
