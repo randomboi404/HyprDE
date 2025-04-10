@@ -16,6 +16,7 @@ blueman                                                # bluetooth manager gui
 brightnessctl                                          # screen brightness control
 gammastep                                              # manage night light
 udiskie                                                # manage removable media
+yad                                                    # gui required for HyprDE Manager
 
 # --------------------------------------------------- // Display Manager
 sddm                                                   # display manager for KDE plasma
