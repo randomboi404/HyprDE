@@ -45,7 +45,7 @@ if [ "$1" == "up" ] ; then
 fi
 
 # Check for AUR updates
-aur=$(${aurhlpr} -Qua | wc -l) 
+aur=$(${aurhlpr} -Qua | grep -v '\[ignored\]' | wc -l)
 ofc=$(CHECKUPDATES_DB=$(mktemp -u) checkupdates | wc -l)
 
 # Check for flatpak updates
