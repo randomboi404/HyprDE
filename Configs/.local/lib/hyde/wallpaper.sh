@@ -19,7 +19,7 @@ options:
     -g, --get                 Get current wallpaper of specified backend
     -o, --output <file>       Copy current wallpaper to specified file
         --link                Resolved the linked wallpaper according to the theme
-    -t  --filetypes <types>   Specify file types to override (comma-separated)
+    -t  --filetypes <types>   Specify file types to override (colon-separated ':')
     -h, --help                Display this help message
 
 flags:
